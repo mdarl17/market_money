@@ -11,6 +11,10 @@ rescue_from ActiveRecord::RecordInvalid, with: :invalid_record_response
     render json: VendorSerializer.format_vendor(vendor), status: 201
   end
 
+  def destroy
+    render json: Vendor.delete(params[:id]), status: 204
+  end
+
   private
   def not_found_response(exception)
     render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).serialize_json, status: :not_found
