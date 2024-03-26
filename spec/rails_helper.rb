@@ -85,3 +85,10 @@ VCR.configure do |config|
   config.allow_http_connections_when_no_cassette = true
   config.default_cassette_options = { record: :new_episodes }
 end
+
+# RSpec.configure do |config|
+#   # Other configuration options...
+
+#   # Display full backtrace for errors
+#   config.backtrace_exclusion_patterns = []
+# end
