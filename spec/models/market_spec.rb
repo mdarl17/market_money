@@ -17,6 +17,17 @@ RSpec.describe Market, :vcr, type: :model do
 		it { should have_many(:vendors).through(:market_vendors)  }
 	end
 
+	describe "validations" do 
+		it { should validate_presence_of(:name).with_message("Name can't be blank.") }
+		it { should validate_presence_of(:street).with_message("Street can't be blank.") }
+		it { should validate_presence_of(:city).with_message("City can't be blank.") }
+		it { should validate_presence_of(:county).with_message("County can't be blank.") }
+		it { should validate_presence_of(:state).with_message("State can't be blank.") }
+		it { should validate_presence_of(:zip).with_message("Zip can't be blank.") }
+		it { should validate_presence_of(:lat).with_message("Lat can't be blank.") }
+		it { should validate_presence_of(:lon).with_message("Lon can't be blank.") }
+	end
+
 	describe "instance methods" do
 		describe "#vendor_count" do 
 			it "returns the number of vendors at a particular market" do 
@@ -30,4 +41,21 @@ RSpec.describe Market, :vcr, type: :model do
 			end
 		end
 	end
-end 
+
+	it "throws an error if any attributes are missing" do 
+		no_name = Market.new(
+			name: "",
+			street: "2676 Brookpark Rd.",
+			city: "West Park",
+			state: "OH",
+			county: "Cuyahogo",
+			zip: "44142",
+			lat: "-53.3",
+			lon: "72.8"
+		)
+
+		expect(no_name.save).to eq(false)
+		expect(no_name).not_to be_valid
+		expect(no_name.errors.messages[:name].first).to include("Name can't be blank")
+	end
+end
