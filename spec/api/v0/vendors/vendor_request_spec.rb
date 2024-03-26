@@ -37,4 +37,18 @@ RSpec.describe "Market Money API Vendor" do
     expect(vendor_data[:data][:attributes]).to have_key(:credit_accepted)
     expect(vendor_data[:data][:attributes][:credit_accepted]).to eq(false)
   end
+
+  it 'will return the correct 404 error message when recieving a non existing ID number' do
+    get "/api/v0/vendors/0000"
+    
+    expect(response).not_to be_successful
+
+    response_data = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response_data).to have_key(:errors)
+    
+    expect(response_data[:errors]).to be_a(Array)
+    expect(response_data[:errors].first).to be_a(Hash)
+    expect(response_data[:errors].first[:detail]).to eq("Couldn't find Vendor with 'id'=0000")
+  end
 end
