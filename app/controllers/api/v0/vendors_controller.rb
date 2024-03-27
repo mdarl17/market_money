@@ -12,6 +12,10 @@ class Api::V0::VendorsController < ApplicationController
     render json: Vendor.delete(params[:id]), status: 204
   end
 
+  def update
+    render json: VendorSerializer.format_vendor(Vendor.update!(params[:id], vendor_params))
+  end
+
   private
 
   def vendor_params
