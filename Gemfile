@@ -11,6 +11,9 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
+# Use jsonapi-serializer to standardize API data structure for endpoints, adhering to official JSON specs
+gem "jsonapi-serializer"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
@@ -45,6 +48,8 @@ group :development, :test do
   gem "pry"
   gem "shoulda-matchers"
   gem "capybara"
+  gem "factory_bot_rails"
+  gem "faker"
 end
 
 group :development do
