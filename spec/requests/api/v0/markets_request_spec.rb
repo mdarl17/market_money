@@ -66,7 +66,7 @@ RSpec.describe "Api::V0::Markets", :vcr, type: :request do
 		get "/api/v0/markets/#{market_id}"
 
 		parsed = JSON.parse(response.body, symbolize_names: true)
-
+		expect(response).to have_http_status(404)
 		expect(parsed[:errors].first[:detail]).to eq("Couldn't find Market with 'id'=324123")
 	end
 end
