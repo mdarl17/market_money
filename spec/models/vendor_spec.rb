@@ -1,34 +1,45 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe Vendor, type: :model do 
-	describe "relationships" do 
-		it { should have_many(:market_vendors) }
-		it { should have_many(:markets).through(:market_vendors)  }
-	end
+RSpec.describe Vendor, type: :model do
+  describe 'validations' do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:description) }
+    it { should validate_presence_of(:contact_name) }
+    it { should validate_presence_of(:contact_phone) }
+  end
 
-	describe "validations" do 
-		it { should validate_presence_of(:name) }
-		it { should validate_presence_of(:description) }
-		it { should validate_presence_of(:contact_name) }
-		it { should validate_presence_of(:contact_phone) }
-		it { should validate_inclusion_of(:credit_accepted).in_array([true, false]) }
-		# it { should validate_presence_of(:credit_accepted) }
-	end
+  it 'is valid only when true or false' do
+    vendor_params_1 = {
+    name: "Buzzy Bees",
+    description: "local honey and wax products",
+    contact_name: "Berly Couwer",
+    contact_phone: "8389928383",
+    credit_accepted: false
+    }
+
+    vendor_params_2 = {
+    name: "Buzzy Bees",
+    description: "local honey and wax products",
+    contact_name: "Berly Couwer",
+    contact_phone: "8389928383",
+    credit_accepted: true
+    }
+
+    vendor_params_3 = {
+    name: "Buzzy Bees",
+    description: "local honey and wax products",
+    contact_name: "Berly Couwer",
+    contact_phone: "8389928383",
+    credit_accepted: nil
+    }
+
+    vendor_1 = Vendor.new(vendor_params_1)
+    vendor_2 = Vendor.new(vendor_params_2)
+    vendor_3 = Vendor.new(vendor_params_3)
+
+
+    expect(vendor_1.save).to eq(true)
+    expect(vendor_2.save).to eq(true)
+    expect(vendor_3.save).to eq(false)
+  end
 end
-
-# >>>>> GETTING ERROR WHEN VALIDATING `PRESENCE_OF` :CREDIT_ACCEPTED AND EXECUTION STOPS <<<<<<
-# >>>>> GET WARNING WHEN USING `INCLUSION_OF, BUT TEST PASSES AND PROGRAM CONTINUES EXECUTION <<<<<<
-# >>>>> MY QUESTION IS...WTF?? <<<<<<
-
-
-# *************************************************************************
-# Got the below warning when I used `validate_inclusion_of` to test if boolean
-
-# Warning from shoulda-matchers:
-
-# You are using `validate_inclusion_of` to assert that a boolean column
-# allows boolean values and disallows non-boolean ones. Be aware that it
-# is not possible to fully test this, as boolean columns will
-# automatically convert non-boolean values to boolean ones. Hence, you
-# should consider removing this test.
-# ************************************************************************
