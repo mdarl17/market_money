@@ -1,7 +1,4 @@
 class Api::V0::VendorsController < ApplicationController
-rescue_from ActiveRecord::RecordNotFound, with: :not_found_response
-rescue_from ActiveRecord::RecordInvalid, with: :invalid_record_response
-
   def show
     render json: VendorSerializer.format_vendor(Vendor.find(params[:id]))
   end
@@ -16,13 +13,6 @@ rescue_from ActiveRecord::RecordInvalid, with: :invalid_record_response
   end
 
   private
-  def not_found_response(exception)
-    render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).serialize_json, status: :not_found
-  end
-
-  def invalid_record_response(exception)
-    render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 400)).serialize_json, status: 400
-  end
 
   def vendor_params
     params.require(:vendor).permit(:name, :description, :contact_name, :contact_phone, :credit_accepted)
