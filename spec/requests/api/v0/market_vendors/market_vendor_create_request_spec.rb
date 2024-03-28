@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Market Money API MarketVendor Create" do
-  it 'can create a new market vendor with valid market and vendor ids' do
+  it 'can create a new market vendor with valid market and vendor ids and recieve the correct status code' do
     vendor = create(:vendor)
     market = create(:market)
     
@@ -13,8 +13,10 @@ RSpec.describe "Market Money API MarketVendor Create" do
 
     post "/api/v0/market_vendors", headers: headers, params: JSON.generate(market_vendor: market_vendor_params)
 
+    
     created_market_vendor = MarketVendor.last
-
+    
+    expect(response.status).to eq(201)
     expect(response).to be_successful
     expect(created_market_vendor.market_id).to eq(market.id)
     expect(created_market_vendor.vendor_id).to eq(vendor.id)
@@ -82,6 +84,8 @@ RSpec.describe "Market Money API MarketVendor Create" do
 
     post "/api/v0/market_vendors", headers: headers, params: JSON.generate(market_vendor: market_vendor_params)
 
+    expect(response.status).to eq(404)
+    
     response_data = JSON.parse(response.body, symbolize_names: true)
 
     expect(response_data).to have_key(:errors)
@@ -104,6 +108,7 @@ RSpec.describe "Market Money API MarketVendor Create" do
     post "/api/v0/market_vendors", headers: headers, params: JSON.generate(market_vendor: market_vendor_params)
 
     expect(response).not_to be_successful
+    expect(response.status).to eq(422)
 
     response_data = JSON.parse(response.body, symbolize_names: true)
 

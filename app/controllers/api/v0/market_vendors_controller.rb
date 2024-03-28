@@ -2,7 +2,16 @@ class Api::V0::MarketVendorsController < ApplicationController
 
   def create
     market_vendor = MarketVendor.create!(market_vendor_params)
-    render json: {message: "Successfully added vendor to market"}
+    render json: {message: "Successfully added vendor to market"}, status: 201
+  end
+
+  def destroy
+    market_vendor = MarketVendor.find_by(market_vendor_params)
+    if market_vendor
+      render json: MarketVendor.delete(market_vendor.id), status: 204
+    else
+      raise ActiveRecord::RecordNotFound
+    end
   end
 
   private

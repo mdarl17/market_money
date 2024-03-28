@@ -6,7 +6,7 @@ class Api::V0::VendorsController < ApplicationController
   end
 
   def show
-    render json: VendorSerializer.format_vendor(Vendor.find(params[:id]))
+    render json: VendorSerializer.format_vendor(Vendor.find(params[:id])), status: 200
   end
 
   def create
