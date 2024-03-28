@@ -1,11 +1,17 @@
 class Api::V0::VendorsController < ApplicationController
+  def index
+    market = Market.find(params[:market_id]) 
+    render json: VendorSerializer.new(market.vendors)
+  end
+
   def show
-    render json: VendorSerializer.format_vendor(Vendor.find(params[:id]))
+    render json: VendorSerializer.new(Vendor.find(params[:id]))
   end
 
   def create
     vendor = Vendor.create!(vendor_params)
-    render json: VendorSerializer.format_vendor(vendor), status: 201
+    # render json: VendorSerializer.format_vendor(vendor), status: 201
+    render json: VendorSerializer.new(vendor), status: 201
   end
 
   def destroy
