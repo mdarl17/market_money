@@ -7,7 +7,7 @@ class Api::V0::MarketVendorsController < ApplicationController
 
   def destroy
     market_vendor = MarketVendor.find_by(market_vendor_params)
-    if market_vendor
+    unless market_vendor == nil
       render json: MarketVendor.delete(market_vendor.id), status: 204
     else
       raise ActiveRecord::RecordNotFound

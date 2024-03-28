@@ -15,6 +15,7 @@ class Api::V0::VendorsController < ApplicationController
   end
 
   def destroy
+    Vendor.delete(params[:id])
     render json: Vendor.delete(params[:id]), status: 204
   end
 
