@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     namespace :v0 do 
       resources :vendors, only: [:show, :create, :destroy, :update]
       resources :market_vendors, only: [:create]
+      get "/markets/search", to: "markets#search"
       resources :markets, only: [:index, :show] do
         resources :vendors, only: :index
       end

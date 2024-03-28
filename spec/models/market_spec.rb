@@ -10,6 +10,10 @@ RSpec.describe Market, :vcr, type: :model do
 		MarketVendor.create!(market_id: Market.second.id, vendor_id: Vendor.fourth.id)
 		MarketVendor.create!(market_id: Market.third.id, vendor_id: Vendor.third.id)
 		MarketVendor.create!(market_id: Market.third.id, vendor_id: Vendor.fifth.id)
+
+		@state = Market.first.state
+		@city = Market.first.city
+		@name = Market.first.name
 	end
 
 	describe "relationships" do 
@@ -57,5 +61,27 @@ RSpec.describe Market, :vcr, type: :model do
 		expect(no_name.save).to eq(false)
 		expect(no_name).not_to be_valid
 		expect(no_name.errors.messages[:name].first).to include("Name can't be blank")
+	end
+
+	it "returns the correct market(s) when searching by approved parameters" do
+		expect(Market.search_by_params({state: @state})).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params({state: @state}).first).to eq(Market.first)
+
+		expect(Market.search_by_params({state: @state, city: @city})).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params({state: @state, city: @city}).first).to eq(Market.first)
+
+		expect(Market.search_by_params({state: @state, city: @city, name: @name})).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params({state: @state, city: @city, name: @name}).first).to eq(Market.first)
+
+		expect(Market.search_by_params({state: @state, name: @name})).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params({state: @state, name: @name}).first).to eq(Market.first)
+
+		expect(Market.search_by_params({name: @name})).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params({name: @name}).first).to eq(Market.first)
+	end
+
+	it "returns an empty ActiveRecord::Relation when the search params contain a valid parameter but no markets match" do
+		expect(Market.search_by_params({name: "Not a real market name"})).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params({name: "Not a real market name"}).empty?).to eq(true)
 	end
 end
