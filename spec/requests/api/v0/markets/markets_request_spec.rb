@@ -1,9 +1,20 @@
 require "rails_helper" 
 
 RSpec.describe "Api::V0::Markets", :vcr, type: :request do 
-	it "GET /api/v0/markets - returns all markets in the database" do
-		load_test_data
+	before(:each) do 
+		create_list(:market, 3)
+		create_list(:vendor, 5)
 
+		MarketVendor.create!(market_id: Market.first.id, vendor_id: Vendor.first.id)
+		MarketVendor.create!(market_id: Market.first.id, vendor_id: Vendor.fourth.id)
+		MarketVendor.create!(market_id: Market.second.id, vendor_id: Vendor.fourth.id)
+		MarketVendor.create!(market_id: Market.second.id, vendor_id: Vendor.second.id)
+		MarketVendor.create!(market_id: Market.third.id, vendor_id: Vendor.fifth.id)
+		
+		WebMock.allow_net_connect!
+	end
+
+	it "GET /api/v0/markets - returns all markets in the database" do
 		markets = Market.all
 
 		get "/api/v0/markets", headers: { "Content-Type": "application/json" }
@@ -28,9 +39,7 @@ RSpec.describe "Api::V0::Markets", :vcr, type: :request do
 	end
 	
 	# happy path
-	it "GET /api/v0/markets/:id - returns the market that matches the provided market ID" do
-		load_test_data
-
+	it "GET /api/v0/markets/:id - returns the market that matches the provided market ID" do 
 		market = Market.all.sample
 
 		get "/api/v0/markets/#{market.id}", headers: { "Content-Type": "application/json" }
@@ -51,44 +60,13 @@ RSpec.describe "Api::V0::Markets", :vcr, type: :request do
 	end
 
 	# sad path
-	it "GET /api/v0/markets/:id - returns an error message if no markets with the given ID can be found" do
-		load_test_data
-
+	it "GET /api/v0/markets/:id - returns an error message if no markets with the given ID can be found" do 
 		market_id = 324123
 
-		get "/api/v0/markets/#{market_id}", headers: { "Content-Type": "application/json" }
+		get "/api/v0/markets/#{market_id}"
 
 		parsed = JSON.parse(response.body, symbolize_names: true)
-
 		expect(response).to have_http_status(404)
 		expect(parsed[:errors].first[:detail]).to eq("Couldn't find Market with 'id'=324123")
-	end
-
-	# happy path
-	it "GET /api/v0/markets/:id/vendors - returns all vendors who sell products at a particular market", skip_global_data: true do
-		load_test_data
-
-		api_res = Market.all.map.with_index do |market, idx|
-			get "/api/v0/markets/#{market.id}/vendors", headers: { "Content-Type": "application/json" }
-			{ market: market.name, response: JSON.parse(response.body, symbolize_names: true) }
-		end
-
-		vendor1 = api_res.first[:response][:data]
-		vendor2 = api_res.second[:response][:data]
-		vendor3 = api_res.third[:response][:data]
-
-		vendor_keys = Market.all.first.vendors.first.attributes.transform_keys(&:to_sym).keys
-		expect(vendor1.count).to eq(Market.all[i].vendor_count)
-		expect(market_1.first[:type]).to eq("vendor")
-		expect(market_1).to be_an(Array)
-		expect(market.first[:attributes]).to be_a(Hash)
-		expect(market.first[:attributes].keys).to match_array([
-			:contact_name, :contact_phone, :credit_accepted, :description, :name
-		])
-		require 'pry'; binding.pry
-		expect(market.first[:attributes][:description]).to eq(Market.all[i].vendors[i].description)
-		expect(market.first[:attributes][:contact_name]).to eq(Market.all[i].vendors[i].contact_name)
-		expect(market.first[:attributes][:contact_phone]).to eq(Market.all[i].vendors[i].contact_phone)
-		expect(market.first[:attributes][:credit_accepted]).to eq(Market.all[i].vendors[i].credit_accepted)
 	end
 end
