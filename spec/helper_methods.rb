@@ -4,7 +4,7 @@ def load_test_data
 	
 	MarketVendor.create!(market_id: Market.first.id, vendor_id: Vendor.first.id)
 	MarketVendor.create!(market_id: Market.first.id, vendor_id: Vendor.fourth.id)
-	MarketVendor.create!(market_id: Market.first.id, vendor_id: Vendor.fourth.id)
+	MarketVendor.create!(market_id: Market.first.id, vendor_id: Vendor.third.id)
 	MarketVendor.create!(market_id: Market.second.id, vendor_id: Vendor.second.id)
 	MarketVendor.create!(market_id: Market.third.id, vendor_id: Vendor.fifth.id)
 end
