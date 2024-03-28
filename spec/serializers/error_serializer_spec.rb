@@ -14,8 +14,7 @@ RSpec.describe ErrorSerializer do
     it 'can return the correct format of error message from its error object attribute' do
       error = ErrorMessage.new("Error Message", 404)
       error_serializer = ErrorSerializer.new(error)
-
-      expect(error_serializer.serialize_json).to eq({:errors=>[{:detail=>"Error Message"}]})
+      expect(error_serializer.serialize_json).to eq({:errors=>[{:detail=>error.message, status_code: error.status_code}]})
     end
   end
 end
