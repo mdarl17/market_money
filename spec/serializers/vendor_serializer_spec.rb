@@ -2,19 +2,18 @@ require 'rails_helper'
 
 RSpec.describe VendorSerializer do
   it 'exists' do
-    serializer = VendorSerializer.new
-
+    load_test_data
+    serializer = VendorSerializer.new(Vendor.all.sample)
     expect(serializer).to be_a(VendorSerializer)
   end
-
+  
   describe '#self.format_vendor' do
     it 'can return data with the correct formatting' do
       vendor = create(:vendor, credit_accepted: false)
 
-      formatted_response = VendorSerializer.format_vendor(vendor)
-
+      formatted_response = VendorSerializer.new(vendor).to_hash
       expect(formatted_response).to have_key(:data)
-      expect(formatted_response[:data]).to be_a(Hash)
+      expect(formatted_response[:data])
 
       data = formatted_response[:data]
 
@@ -22,7 +21,7 @@ RSpec.describe VendorSerializer do
       expect(data[:id]).to be_a(String)
 
       expect(data).to have_key(:type)
-      expect(data[:type]).to eq("vendor")
+      expect(data[:type].to_s).to eq("vendor")
 
       expect(data).to have_key(:attributes)
       expect(data[:attributes]).to be_a(Hash)
@@ -49,14 +48,12 @@ RSpec.describe VendorSerializer do
   describe '#self.serialize_market_vendors(market_vendors)' do
     it 'will format the data correctly for market_vendors' do
       vendors = create_list(:vendor, 3, credit_accepted: false)
-
-      formatted_vendors = VendorSerializer.serialize_market_vendors(vendors)
-
+      formatted_vendors = VendorSerializer.new(vendors).to_hash
+      
       expect(formatted_vendors).to have_key(:data)
       expect(formatted_vendors[:data]).to be_a(Array)
 
       vendor_data = formatted_vendors[:data].first
-
       expect(vendor_data).to have_key(:attributes)
       expect(vendor_data[:attributes]).to be_a(Hash)
 
