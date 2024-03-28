@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::API
 	rescue_from ActiveRecord::RecordNotFound, with: :not_found_response
 	rescue_from ActiveRecord::RecordInvalid, with: :invalid_record_response
+	rescue_from ActionDispatch::Http::Parameters::ParseError, with: :invalid_syntax
 
   def not_found_response(exception)
     render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404)).serialize_json, status: :not_found
@@ -20,5 +21,7 @@ class ApplicationController < ActionController::API
     render json: ErrorSerializer.new(ErrorMessage.new(exception.message, status_code)).serialize_json, status: status_code
   end
 
-
+  def invalid_syntax(exception)
+    render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 406)).serialize_json, status: :not_acceptable
+  end
 end
