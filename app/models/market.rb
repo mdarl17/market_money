@@ -1,4 +1,4 @@
-class Market < ApplicationRecord 
+class Market < ApplicationRecord
 	validates :name, :street, :city, :county, :state, :zip, :lat, :lon, presence: { message: "%{attribute} can't be blank." }
 
 	has_many :market_vendors
@@ -7,5 +7,14 @@ class Market < ApplicationRecord
 	def vendor_count
 		vendors.count
 	end
-end
 
+	def self.search_by_params(state, city, name)
+		markets = Market.all
+
+		markets = Market.where("state ILIKE ?", "%#{state}%") if state
+		markets = markets.where("city ILIKE ?", "%#{city}%") if city
+		markets = markets.where("name ILIKE ?", "%#{name}%") if name
+
+		markets
+	end
+end
