@@ -10,7 +10,9 @@ RSpec.describe "Api::V0::Markets", :vcr, type: :request do
 		MarketVendor.create!(market_id: Market.second.id, vendor_id: Vendor.fourth.id)
 		MarketVendor.create!(market_id: Market.second.id, vendor_id: Vendor.second.id)
 		MarketVendor.create!(market_id: Market.third.id, vendor_id: Vendor.fifth.id)
-		
+
+		@headers = { Content_Type: "application/json" }
+
 		WebMock.allow_net_connect!
 	end
 

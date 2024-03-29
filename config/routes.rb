@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index" 
+  get "/api/v0/markets/search", to: "api/v0/markets#search", as: "search"
 
   namespace :api do 
     namespace :v0 do 
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
       end
       delete "/market_vendors", to: "market_vendors#destroy"
     end
-  end 
+  end
+
 end
