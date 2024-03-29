@@ -3,16 +3,16 @@ require 'rails_helper'
 RSpec.describe "Market Money API Search Markets" do
   before(:each) do
     @markets = create_list(:market, 3, state: "Colorado")
-    @extra_market = create(:market, state: "Arizona", city: "Albuquerque")
-    @state = @markets.first.state
-    @city = @markets.first.city
-    @name = @markets.first.name
+    @extra_market = create(:market, state: "west Virginia", city: "GasSaway", name: "county")
+    @state = @extra_market.state
+    @city = @extra_market.city
+    @name = @extra_market.name
   end
 
   it 'can search for markets by state' do
     headers = {"CONTENT_TYPE" => "application/json"}
 
-    get "/api/v0/markets/search?state=#{@state}", headers: headers
+    get "/api/v0/markets/search?state=colorado", headers: headers
 
     expect(response).to be_successful
     expect(response.status).to eq(200)
@@ -20,9 +20,9 @@ RSpec.describe "Market Money API Search Markets" do
     response_data = JSON.parse(response.body, symbolize_names: true)
 
     expect(response_data[:data].count).to eq(3)
-    expect(response_data[:data].first[:attributes][:name]).to eq(@name)
-    expect(response_data[:data].first[:attributes][:state]).to eq(@state)
-    expect(response_data[:data].first[:attributes][:city]).to eq(@city)
+    expect(response_data[:data].first[:attributes][:name]).to eq(@markets.first.name)
+    expect(response_data[:data].first[:attributes][:state]).to eq(@markets.first.state)
+    expect(response_data[:data].first[:attributes][:city]).to eq(@markets.first.city)
   end
 
   it 'can search for markets by state and city at the same time' do
@@ -102,7 +102,7 @@ RSpec.describe "Market Money API Search Markets" do
   it 'responds with an error when provided an invalid set of parameters' do
     headers = {"CONTENT_TYPE" => "application/json"}
 
-    get "/api/v0/markets/search?market=thatone", headers: headers
+    get "/api/v0/markets/search?city=thatone", headers: headers
 
     expect(response).not_to be_successful
     expect(response.status).to eq(422)

@@ -64,24 +64,24 @@ RSpec.describe Market, :vcr, type: :model do
 	end
 
 	it "returns the correct market(s) when searching by approved parameters" do
-		expect(Market.search_by_params({state: @state})).to be_a(ActiveRecord::Relation)
-		expect(Market.search_by_params({state: @state}).first).to eq(Market.first)
+		expect(Market.search_by_params(@state, nil, nil)).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params(@state, nil, nil).first).to eq(Market.first)
 
-		expect(Market.search_by_params({state: @state, city: @city})).to be_a(ActiveRecord::Relation)
-		expect(Market.search_by_params({state: @state, city: @city}).first).to eq(Market.first)
+		expect(Market.search_by_params(@state, @city, nil)).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params(@state, @city, nil).first).to eq(Market.first)
 
-		expect(Market.search_by_params({state: @state, city: @city, name: @name})).to be_a(ActiveRecord::Relation)
-		expect(Market.search_by_params({state: @state, city: @city, name: @name}).first).to eq(Market.first)
+		expect(Market.search_by_params(@state, @city, @name)).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params(@state, @city, @name).first).to eq(Market.first)
 
-		expect(Market.search_by_params({state: @state, name: @name})).to be_a(ActiveRecord::Relation)
-		expect(Market.search_by_params({state: @state, name: @name}).first).to eq(Market.first)
+		expect(Market.search_by_params(@state, nil, @name)).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params(@state, nil, @name).first).to eq(Market.first)
 
-		expect(Market.search_by_params({name: @name})).to be_a(ActiveRecord::Relation)
-		expect(Market.search_by_params({name: @name}).first).to eq(Market.first)
+		expect(Market.search_by_params(nil, nil, @name)).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params(nil, nil, @name).first).to eq(Market.first)
 	end
 
 	it "returns an empty ActiveRecord::Relation when the search params contain a valid parameter but no markets match" do
-		expect(Market.search_by_params({name: "Not a real market name"})).to be_a(ActiveRecord::Relation)
-		expect(Market.search_by_params({name: "Not a real market name"}).empty?).to eq(true)
+		expect(Market.search_by_params(nil, nil, "Not a real market name")).to be_a(ActiveRecord::Relation)
+		expect(Market.search_by_params(nil, nil, "Not a real market name").empty?).to eq(true)
 	end
 end
