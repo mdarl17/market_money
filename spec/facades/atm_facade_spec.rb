@@ -1,6 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe "Market Money API ATM Search" do
+RSpec.describe AtmFacade do
+  it 'exists' do
+    facade = AtmFacade.new(5)
+
+    expect(facade).to be_a(AtmFacade)
+  end
+  
   before(:each) do
     json_response = File.read("spec/fixtures/nearest_atms_fixture.json")
 
@@ -9,20 +15,13 @@ RSpec.describe "Market Money API ATM Search" do
       query: {
         'key'=> "SFrEbfhJA2ssKQ2IIiGUqQK5zIydAa8v"
       }).
-      to_return(status: 200, body: json_response, headers: {})
+    to_return(status: 200, body: json_response, headers: {})
   end
 
-  it 'can return ATMs that are near the market and returns them from closest to furthest' do
+  it 'it returns data about the atms near the market' do
     market = create(:market, lat: "37.583311", lon: "-79.048573")
 
-    headers = {"CONTENT_TYPE" => "application/json"}
-
-    get "/api/v0/markets/#{market.id}/nearest_atms", headers: headers
-
-    expect(response).to be_successful
-    expect(response.status).to eq(200)
-
-    response_data = JSON.parse(response.body, symbolize_names: true)
+    response_data = AtmFacade.new(market.id).nearest_atms
 
     expect(response_data).to have_key(:data)
     expect(response_data[:data]).to be_a(Array)
@@ -44,22 +43,5 @@ RSpec.describe "Market Money API ATM Search" do
 
     expect(response_data[:data].first[:attributes]).to have_key(:distance)
     expect(response_data[:data].first[:attributes][:distance]).to be_a(Float)
-  end
-  
-  it 'will return an empty array if no ATMs are near the location' do
-    market = create(:market, lat: "-9999999", lon: "-9999999")
-
-    headers = {"CONTENT_TYPE" => "application/json"}
-
-    get "/api/v0/markets/#{market.id}/nearest_atms", headers: headers
-
-    expect(response).to be_successful
-    expect(response.status).to eq(200)
-
-    response_data = JSON.parse(response.body, symbolize_names: true)
-
-    expect(response_data).to have_key(:data)
-    expect(response_data[:data]).to be_a(Array)
-    expect(response_data[:data].empty?).to eq(true)
   end
 end
