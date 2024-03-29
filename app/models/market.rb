@@ -9,17 +9,12 @@ class Market < ApplicationRecord
 	end
 
 	def self.search_by_params(state, city, name)
-		# state = params[:state]
-		# city = params[:city]
-		# name = params[:name]
-
 		markets = Market.all
 
-		markets = markets.where("state ILIKE ?", "#{state}") if state
-		markets = markets.where("city ILIKE ?", "#{city}") if city
-		markets = markets.where("name ILIKE ?", "#{name}") if name
+		markets = Market.where("state ILIKE ?", "%#{state}%") if state
+		markets = markets.where("city ILIKE ?", "%#{city}%") if city
+		markets = markets.where("name ILIKE ?", "%#{name}%") if name
 
 		markets
 	end
 end
-
