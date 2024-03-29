@@ -13,7 +13,7 @@ RSpec.describe AtmService do
     stub_request(:get, "https://api.tomtom.com/search/2/categorySearch/automatic_teller_machine.json?lat=37.583311&lon=-79.048573").
       with(
       query: {
-        'key'=> "SFrEbfhJA2ssKQ2IIiGUqQK5zIydAa8v"
+        'key'=> Rails.application.credentials.tomtom[:key]
       }).
     to_return(status: 200, body: json_response, headers: {})
   end
