@@ -1,5 +1,5 @@
 class Api::V0::MarketsController < ApplicationController 
-	# rescue_from ActionController::UnpermittedParameters, with: :unpermitted_param
+
 	# /api/v0/markets
 	def index
 		markets = Market.all
@@ -13,7 +13,6 @@ class Api::V0::MarketsController < ApplicationController
 	end
 
 	def search
-		# require 'pry' ; binding.pry
 		markets = Market.search_by_params(search_params)
 		if markets.class == ErrorMessage
 			unpermitted_param(markets)
