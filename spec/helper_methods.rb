@@ -1,4 +1,4 @@
-def load_test_data 
+def load_test_data
 	create_list(:market, 3)
 	create_list(:vendor, 5)
 	
