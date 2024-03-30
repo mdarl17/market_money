@@ -149,7 +149,7 @@ RSpec.describe "search", type: :request do
 			expect(response).to have_http_status(422)
 			expect(parsed).to have_key(:error)
 			expect(parsed[:error]).to be_a(Hash)
-			expect(parsed[:error][:message]).to eq("The city attribute can not be present without the state attribute")
+			expect(parsed[:error][:message]).to eq("Invalid set of parameters. Please provide a valid set of parameters to perform a search with this endpoint.")
 		end
 
 		# sad path - city, name attributes
@@ -166,7 +166,7 @@ RSpec.describe "search", type: :request do
 			expect(response).to have_http_status(422)
 			expect(parsed).to have_key(:error)
 			expect(parsed[:error]).to be_a(Hash)
-			expect(parsed[:error][:message]).to eq("The city attribute can not be present without the state attribute")
+			expect(parsed[:error][:message]).to eq("Invalid set of parameters. Please provide a valid set of parameters to perform a search with this endpoint.")
 		end
 	end
 end 
