@@ -14,6 +14,8 @@ gem "puma", ">= 5.0"
 # Use jsonapi-serializer to standardize API data structure for endpoints, adhering to official JSON specs
 gem "jsonapi-serializer"
 
+gem "faraday"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
