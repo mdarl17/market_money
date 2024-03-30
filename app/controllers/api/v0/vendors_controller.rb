@@ -11,7 +11,6 @@ class Api::V0::VendorsController < ApplicationController
 
   def create
     vendor = Vendor.create!(vendor_params)
-    # render json: VendorSerializer.format_vendor(vendor), status: 201
     render json: VendorSerializer.new(vendor), status: 201
   end
 
@@ -26,12 +25,10 @@ class Api::V0::VendorsController < ApplicationController
       render json: VendorSerializer.new(vendor)
       return
     else
-      # render json: { errors: vendor.errors }, status: :unprocessable_entity
-      render json: ErrorSerializer.new(ErrorMessage.new(exception.message, status_code)).serialize_json, status: :unprocessable_entity
+      render json: ErrorSerializer.new(ErrorMessage.new(vendor.errors, 422)).serialize_json, status: :unprocessable_entity
     end
   end
-  # render json: VendorSerializer.new(updated_ven), status: 200
-  # render json: VendorSerializer.format_vendor(Vendor.update(params[:id], vendor_params))
+
   private
 
   def vendor_params
