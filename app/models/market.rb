@@ -1,17 +1,16 @@
 class Market < ApplicationRecord 
-	validates :name, :street, :city, :county, :state, :zip, :lat, :lon, presence: { message: "%{attribute} can't be blank." }
 
 	has_many :market_vendors
 	has_many :vendors, through: :market_vendors
 	
+	validates :name, :street, :city, :county, :state, :zip, :lat, :lon, presence: { message: "%{attribute} can't be blank." }
+
 	def vendor_count
 		vendors.count
 	end
 
-	def self.titleize(state)
-		if state
-			return state.split(" ").map(&:capitalize).join(" ")
-		end
+	def self.fuzzy_find(column, val)
+		where("#{column} ILIKE '%#{val}%'")
 	end
 
 	def self.filter_params(*args)
@@ -20,28 +19,30 @@ class Market < ApplicationRecord
 		end
 	end
 
-	def self.search(*args)
-
+	def self.search_db(*args)
 		params = filter_params(args.first)
-		if params.count == 1 && !params[:name]
-			state = titleize(params[:state])
-			return self.where(state: state)
+		city = params[:city]
+		state = params[:state]
+		name = params[:name]
 
-		elsif params.count == 1
-			return self.where(name: params[:name])
+		if city && state && name
+			return fuzzy_find("city", city).fuzzy_find("state", state).fuzzy_find("name", name)
 		end
 
-		if params.count == 2 && !params[:name]
-			state = titleize(params[:state])
-			return self.where(city: params[:city]).where(state: state)
-		elsif params.count == 2
-			state = titleize(params[:state])
-			return self.where(state: state).where(name: params[:name])
+		if city && state
+			return fuzzy_find("city", city).fuzzy_find("state", state)
 		end
 
-		if params.count == 3
-			state = titleize(params[:state])
-			return self.where(city: params[:city]).where(state: state).where(name: params[:name])
+		if name && state
+			return fuzzy_find("name", name).fuzzy_find("state", state)
+		end
+
+		if name
+			return fuzzy_find("name", name)
+		end
+
+		if state
+			return fuzzy_find("state", state)
 		end
 	end
 end
