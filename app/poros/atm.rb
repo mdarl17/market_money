@@ -3,7 +3,7 @@ class Atm
 
 	def initialize(attributes)
 		@id = nil
-		@type = attributes[:type]
+		@type = "atm"
 		@name = attributes[:poi][:name]
 		@address = attributes[:address][:freeformAddress]
 		@lat = attributes[:position][:lat]
