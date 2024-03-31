@@ -92,4 +92,133 @@ http_interactions:
         States","countryCodeISO3":"USA","freeformAddress":"1730 Ka-mehameha Avenue,
         Hilo, HI 96720","localName":"Hilo"},"position":{"lat":19.722231,"lon":-155.06459},"viewport":{"topLeftPoint":{"lat":19.72313,"lon":-155.06555},"btmRightPoint":{"lat":19.72133,"lon":-155.06363}},"entryPoints":[{"type":"main","position":{"lat":19.72258,"lon":-155.0646}}]}]}'
   recorded_at: Sun, 31 Mar 2024 07:02:34 GMT
+- request:
+    method: get
+    uri: https://api.tomtom.com/search/2/categorySearch/atm.json?key=<API_Key>&lat=-8.322567289581755&lon=-167.5359429086052
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 31 Mar 2024 22:07:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      Tracking-Id:
+      - 7ea94559-e7bc-4646-8460-975d61517a6b
+      Access-Control-Expose-Headers:
+      - Tracking-ID
+      Server:
+      - tomtom
+      X-Tomtom-Processed-By:
+      - westus2
+      X-Tomtom-Message-Id:
+      - bce06a85-768b-429d-b9f4-0574aa63625c
+      X-Tomtom-Upstream-Service-Time:
+      - '263'
+      X-Tomtom-Attempt-Count:
+      - '1'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"summary":{"query":"atm","queryType":"NON_NEAR","queryTime":247,"numResults":10,"offset":0,"totalResults":100,"fuzzyLevel":1,"geoBias":{"lat":-8.322567289581755,"lon":-167.5359429086052}},"results":[{"type":"POI","id":"DovRnhLkGwBHzWq7A4WBcw","score":2.1454405785,"dist":1683235.538635,"info":"search:ta:242009000002796-FJ","poi":{"name":"Jaduram
+        Building","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetName":"Nasekula Road","municipality":"Labasa","countrySecondarySubdivision":"Macuata","countrySubdivision":"Northern","countrySubdivisionName":"Northern","countrySubdivisionCode":"N","countryCode":"FJ","country":"Fiji","countryCodeISO3":"FJI","freeformAddress":"Nasekula
+        Road Labasa Macuata, Northern","localName":"Labasa"},"position":{"lat":-16.4332,"lon":179.36451},"viewport":{"topLeftPoint":{"lat":-16.4323,"lon":179.36357},"btmRightPoint":{"lat":-16.4341,"lon":179.36545}},"entryPoints":[{"type":"main","position":{"lat":-16.43323,"lon":179.36456}}]},{"type":"POI","id":"t9gVA4JHyhfdRWP8SwWZUg","score":2.1454405785,"dist":1683235.538635,"info":"search:ta:242009000002879-FJ","poi":{"name":"Westpac
+        Labasa Branch","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetName":"Nasekula Road","municipality":"Labasa","countrySecondarySubdivision":"Macuata","countrySubdivision":"Northern","countrySubdivisionName":"Northern","countrySubdivisionCode":"N","countryCode":"FJ","country":"Fiji","countryCodeISO3":"FJI","freeformAddress":"Nasekula
+        Road Labasa Macuata, Northern","localName":"Labasa"},"position":{"lat":-16.4332,"lon":179.36451},"viewport":{"topLeftPoint":{"lat":-16.4323,"lon":179.36357},"btmRightPoint":{"lat":-16.4341,"lon":179.36545}},"entryPoints":[{"type":"main","position":{"lat":-16.43323,"lon":179.36456}}]},{"type":"POI","id":"OJWt8qoAmkbtWSekfLbVKQ","score":2.1454405785,"dist":1683235.538635,"info":"search:ta:242009000003683-FJ","poi":{"name":"Bashir
+        Khan Building","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetName":"Nasekula Road","municipality":"Labasa","countrySecondarySubdivision":"Macuata","countrySubdivision":"Northern","countrySubdivisionName":"Northern","countrySubdivisionCode":"N","countryCode":"FJ","country":"Fiji","countryCodeISO3":"FJI","freeformAddress":"Nasekula
+        Road Labasa Macuata, Northern","localName":"Labasa"},"position":{"lat":-16.4332,"lon":179.36451},"viewport":{"topLeftPoint":{"lat":-16.4323,"lon":179.36357},"btmRightPoint":{"lat":-16.4341,"lon":179.36545}},"entryPoints":[{"type":"main","position":{"lat":-16.43323,"lon":179.36456}}]},{"type":"POI","id":"sOz518fkQQlLlem6yF3XDw","score":2.1454405785,"dist":1680569.533877,"info":"search:ta:242009000002624-FJ","poi":{"name":"Bank
+        of South Pacific Labasa Branch","brands":[{"name":"Bank of South Pacific"}],"categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"municipality":"Labasa","countrySecondarySubdivision":"Macuata","countrySubdivision":"Northern","countrySubdivisionName":"Northern","countrySubdivisionCode":"N","countryCode":"FJ","country":"Fiji","countryCodeISO3":"FJI","freeformAddress":"Labasa
+        Macuata, Northern","localName":"Labasa"},"position":{"lat":-16.416666,"lon":179.383333},"viewport":{"topLeftPoint":{"lat":-16.41577,"lon":179.3824},"btmRightPoint":{"lat":-16.41757,"lon":179.38427}},"entryPoints":[{"type":"main","position":{"lat":-16.41652,"lon":179.38287}}]},{"type":"POI","id":"3nKAiStk9hHLxi5WHA2wQw","score":2.1454405785,"dist":1683236.75074,"info":"search:ta:242009000001664-FJ","poi":{"name":"Office
+        Mate Labasa","brands":[{"name":"Bank of South Pacific"}],"categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetName":"Nasekula Road","municipality":"Labasa","countrySecondarySubdivision":"Macuata","countrySubdivision":"Northern","countrySubdivisionName":"Northern","countrySubdivisionCode":"N","countryCode":"FJ","country":"Fiji","countryCodeISO3":"FJI","freeformAddress":"Nasekula
+        Road Labasa Macuata, Northern","localName":"Labasa"},"position":{"lat":-16.433178,"lon":179.364483},"viewport":{"topLeftPoint":{"lat":-16.43228,"lon":179.36355},"btmRightPoint":{"lat":-16.43408,"lon":179.36542}},"entryPoints":[{"type":"main","position":{"lat":-16.43323,"lon":179.36456}}]},{"type":"POI","id":"LOt51vpGR8ADgHfPlIoW1Q","score":2.14544034,"dist":1706322.452364,"info":"search:ta:242009000002502-FJ","poi":{"name":"Bank
+        of South Pacific Savusavu Branch","brands":[{"name":"Bank of South Pacific"}],"categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"municipalitySubdivision":"Savusavu","municipality":"Nasavusavu","countrySecondarySubdivision":"Cakaudrove","countrySubdivision":"Northern","countrySubdivisionName":"Northern","countrySubdivisionCode":"N","countryCode":"FJ","country":"Fiji","countryCodeISO3":"FJI","freeformAddress":"Nasavusavu
+        Cakaudrove, Northern","localName":"Nasavusavu"},"position":{"lat":-16.783333,"lon":179.333333},"viewport":{"topLeftPoint":{"lat":-16.78163,"lon":179.33156},"btmRightPoint":{"lat":-16.78503,"lon":179.33511}},"entryPoints":[{"type":"main","position":{"lat":-16.78499,"lon":179.33373}}]},{"type":"POI","id":"G6m4RJlzO33GyN7TxH6WCA","score":2.1454401016,"dist":1867819.220681,"info":"search:ta:242009000003590-FJ","poi":{"name":"Suva
+        Shopping Centre","brands":[{"name":"Bank of South Pacific"}],"categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"municipality":"Suva","countrySecondarySubdivision":"Rewa","countrySubdivision":"Central","countrySubdivisionName":"Central","countrySubdivisionCode":"C","countryCode":"FJ","country":"Fiji","countryCodeISO3":"FJI","freeformAddress":"Suva
+        Rewa, Central","localName":"Suva"},"position":{"lat":-18.14161,"lon":178.44149},"viewport":{"topLeftPoint":{"lat":-18.14071,"lon":178.44054},"btmRightPoint":{"lat":-18.14251,"lon":178.44244}},"entryPoints":[{"type":"main","position":{"lat":-18.1409,"lon":178.44139}}]},{"type":"POI","id":"8O6qE74kAQ_JECYe5IQP5Q","score":2.1454401016,"dist":1867819.220681,"info":"search:ta:242009000002159-FJ","poi":{"name":"Rfmf","brands":[{"name":"Bank
+        of South Pacific"}],"categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"municipality":"Suva","countrySecondarySubdivision":"Rewa","countrySubdivision":"Central","countrySubdivisionName":"Central","countrySubdivisionCode":"C","countryCode":"FJ","country":"Fiji","countryCodeISO3":"FJI","freeformAddress":"Suva
+        Rewa, Central","localName":"Suva"},"position":{"lat":-18.14161,"lon":178.44149},"viewport":{"topLeftPoint":{"lat":-18.14071,"lon":178.44054},"btmRightPoint":{"lat":-18.14251,"lon":178.44244}},"entryPoints":[{"type":"main","position":{"lat":-18.1409,"lon":178.44139}}]},{"type":"POI","id":"fjhrYxDK3O0XdsiikLRalA","score":2.1454401016,"dist":1925408.474351,"info":"search:ta:242009000002751-FJ","poi":{"name":"Fnu
+        Teachers College","brands":[{"name":"Bank of South Pacific"}],"categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetName":"Maravu Street","municipalitySubdivision":"Lautoka","municipality":"Vuda","countrySecondarySubdivision":"Ba","countrySubdivision":"Western","countrySubdivisionName":"Western","countrySubdivisionCode":"W","countryCode":"FJ","country":"Fiji","countryCodeISO3":"FJI","freeformAddress":"Maravu
+        Street Vuda Ba, Western","localName":"Vuda"},"position":{"lat":-17.61686,"lon":177.45049},"viewport":{"topLeftPoint":{"lat":-17.61596,"lon":177.44955},"btmRightPoint":{"lat":-17.61776,"lon":177.45143}},"entryPoints":[{"type":"main","position":{"lat":-17.61695,"lon":177.45021}}]},{"type":"POI","id":"j7HLmkO-xJzJ03Ypkzu88g","score":2.1454401016,"dist":1867819.220681,"info":"search:ta:242009000003680-FJ","poi":{"name":"Parade
+        Atm 2","brands":[{"name":"Bank of South Pacific"}],"categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"municipality":"Suva","countrySecondarySubdivision":"Rewa","countrySubdivision":"Central","countrySubdivisionName":"Central","countrySubdivisionCode":"C","countryCode":"FJ","country":"Fiji","countryCodeISO3":"FJI","freeformAddress":"Suva
+        Rewa, Central","localName":"Suva"},"position":{"lat":-18.14161,"lon":178.44149},"viewport":{"topLeftPoint":{"lat":-18.14071,"lon":178.44054},"btmRightPoint":{"lat":-18.14251,"lon":178.44244}},"entryPoints":[{"type":"main","position":{"lat":-18.1409,"lon":178.44139}}]}]}'
+  recorded_at: Sun, 31 Mar 2024 22:07:42 GMT
+- request:
+    method: get
+    uri: https://api.tomtom.com/search/2/categorySearch/atm.json?key=<API_Key>&lat=-41.561436351150505&lon=66.92883701738106
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 31 Mar 2024 22:07:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      Tracking-Id:
+      - ed4f9647-6c4c-44db-9c5b-40cc60c385b9
+      Access-Control-Expose-Headers:
+      - Tracking-ID
+      Server:
+      - tomtom
+      X-Tomtom-Processed-By:
+      - westus2
+      X-Tomtom-Message-Id:
+      - '0877caa9-1c55-4be8-ad98-fa85fc93b4f1'
+      X-Tomtom-Upstream-Service-Time:
+      - '256'
+      X-Tomtom-Attempt-Count:
+      - '1'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdW1tYXJ5Ijp7InF1ZXJ5IjoiYXRtIiwicXVlcnlUeXBlIjoiTk9OX05FQVIiLCJxdWVyeVRpbWUiOjI0MCwibnVtUmVzdWx0cyI6MTAsIm9mZnNldCI6MCwidG90YWxSZXN1bHRzIjoxMDAsImZ1enp5TGV2ZWwiOjEsImdlb0JpYXMiOnsibGF0IjotNDEuNTYxNDM2MzUxMTUwNTA1LCJsb24iOjY2LjkyODgzNzAxNzM4MTA2fX0sInJlc3VsdHMiOlt7InR5cGUiOiJQT0kiLCJpZCI6IlVpMzN1R0RPVXFhcWNHekY4amNCaFEiLCJzY29yZSI6Mi4xNDU0Mzk4NjMyLCJkaXN0IjoxMTQxMTU2My4wNjIwNjksImluZm8iOiJzZWFyY2g6dGE6MDIwMDA5MDAwMDAwOTQ0LUFEIiwicG9pIjp7Im5hbWUiOiJCYW5jU2FiYWRlbGwgZCdBbmRvcnJhIiwiYnJhbmRzIjpbeyJuYW1lIjoiQmFuYyBTYWJhZGVsbCBkJ0FuZG9ycmEifV0sImNhdGVnb3J5U2V0IjpbeyJpZCI6NzM5N31dLCJjYXRlZ29yaWVzIjpbImNhc2ggZGlzcGVuc2VyIl0sImNsYXNzaWZpY2F0aW9ucyI6W3siY29kZSI6IkNBU0hfRElTUEVOU0VSIiwibmFtZXMiOlt7Im5hbWVMb2NhbGUiOiJlbi1VUyIsIm5hbWUiOiJjYXNoIGRpc3BlbnNlciJ9XX1dfSwiYWRkcmVzcyI6eyJzdHJlZXROdW1iZXIiOiI3Iiwic3RyZWV0TmFtZSI6IkF2aW5ndWRhIGRlbCBGZW5lciIsIm11bmljaXBhbGl0eSI6IkFuZG9ycmEgbGEgVmVsbGEiLCJwb3N0YWxDb2RlIjoiQUQ1MDAiLCJjb3VudHJ5Q29kZSI6IkFEIiwiY291bnRyeSI6IkFuZG9ycmEiLCJjb3VudHJ5Q29kZUlTTzMiOiJBTkQiLCJmcmVlZm9ybUFkZHJlc3MiOiJBdmluZ3VkYSBkZWwgRmVuZXIgNywgQW5kb3JyYSBsYSBWZWxsYSwgQUQ1MDAiLCJsb2NhbE5hbWUiOiJBbmRvcnJhIGxhIFZlbGxhIn0sInBvc2l0aW9uIjp7ImxhdCI6NDIuNTA3MTUsImxvbiI6MS41MzQyNDV9LCJ2aWV3cG9ydCI6eyJ0b3BMZWZ0UG9pbnQiOnsibGF0Ijo0Mi41MDgwNSwibG9uIjoxLjUzMzAzfSwiYnRtUmlnaHRQb2ludCI6eyJsYXQiOjQyLjUwNjI1LCJsb24iOjEuNTM1NDZ9fSwiZW50cnlQb2ludHMiOlt7InR5cGUiOiJtYWluIiwicG9zaXRpb24iOnsibGF0Ijo0Mi41MDcxNSwibG9uIjoxLjUzNDI1fX1dfSx7InR5cGUiOiJQT0kiLCJpZCI6InZ0QVFBNy1Bd0Q4Z0R2V3d2dXc4RlEiLCJzY29yZSI6Mi4xNDU0Mzk4NjMyLCJkaXN0IjoxMTQxNTU3MS45MTQzNzYsImluZm8iOiJzZWFyY2g6dGE6MDIwMDA5MDAwMDAwNzY4LUFEIiwicG9pIjp7Im5hbWUiOiJDcsOoZGl0IEFuZG9ycsOgIiwiYnJhbmRzIjpbeyJuYW1lIjoiQ3LDqGRpdCBBbmRvcnLDoCJ9XSwiY2F0ZWdvcnlTZXQiOlt7ImlkIjo3Mzk3fV0sImNhdGVnb3JpZXMiOlsiY2FzaCBkaXNwZW5zZXIiXSwiY2xhc3NpZmljYXRpb25zIjpbeyJjb2RlIjoiQ0FTSF9ESVNQRU5TRVIiLCJuYW1lcyI6W3sibmFtZUxvY2FsZSI6ImVuLVVTIiwibmFtZSI6ImNhc2ggZGlzcGVuc2VyIn1dfV19LCJhZGRyZXNzIjp7InN0cmVldE5hbWUiOiJDYXJyZXIgTWFqb3IiLCJtdW5pY2lwYWxpdHkiOiJPcmRpbm8iLCJwb3N0YWxDb2RlIjoiQUQzMDAiLCJjb3VudHJ5Q29kZSI6IkFEIiwiY291bnRyeSI6IkFuZG9ycmEiLCJjb3VudHJ5Q29kZUlTTzMiOiJBTkQiLCJmcmVlZm9ybUFkZHJlc3MiOiJDYXJyZXIgTWFqb3IsIE9yZGlubywgQUQzMDAiLCJsb2NhbE5hbWUiOiJPcmRpbm8ifSwicG9zaXRpb24iOnsibGF0Ijo0Mi41NTY4NzgsImxvbiI6MS41MzM0NTh9LCJ2aWV3cG9ydCI6eyJ0b3BMZWZ0UG9pbnQiOnsibGF0Ijo0Mi41NTc3OCwibG9uIjoxLjUzMjI0fSwiYnRtUmlnaHRQb2ludCI6eyJsYXQiOjQyLjU1NTk4LCJsb24iOjEuNTM0Njh9fSwiZW50cnlQb2ludHMiOlt7InR5cGUiOiJtYWluIiwicG9zaXRpb24iOnsibGF0Ijo0Mi41NTY3NCwibG9uIjoxLjUzMzU0fX1dfSx7InR5cGUiOiJQT0kiLCJpZCI6InBaVFNKdFFMVmZkT0VaZ05uNzlTQUEiLCJzY29yZSI6Mi4xNDU0Mzk4NjMyLCJkaXN0IjoxMTQxNzg1MS4wMTY4MDEsImluZm8iOiJzZWFyY2g6dGE6MDIwMDA5MDAwMDIxNzQzLUFEIiwicG9pIjp7Im5hbWUiOiJDcsOoZGl0IEFuZG9ycsOgIiwiYnJhbmRzIjpbeyJuYW1lIjoiQ3LDqGRpdCBBbmRvcnLDoCJ9XSwiY2F0ZWdvcnlTZXQiOlt7ImlkIjo3Mzk3fV0sImNhdGVnb3JpZXMiOlsiY2FzaCBkaXNwZW5zZXIiXSwiY2xhc3NpZmljYXRpb25zIjpbeyJjb2RlIjoiQ0FTSF9ESVNQRU5TRVIiLCJuYW1lcyI6W3sibmFtZUxvY2FsZSI6ImVuLVVTIiwibmFtZSI6ImNhc2ggZGlzcGVuc2VyIn1dfV19LCJhZGRyZXNzIjp7InN0cmVldE5hbWUiOiJVcmJhbml0emFjacOzIFN1cGVyIFBhbCIsIm11bmljaXBhbGl0eVN1YmRpdmlzaW9uIjoiUGFsIiwibXVuaWNpcGFsaXR5IjoiTGEgTWFzc2FuYSIsInBvc3RhbENvZGUiOiJBRDQwMCIsImNvdW50cnlDb2RlIjoiQUQiLCJjb3VudHJ5IjoiQW5kb3JyYSIsImNvdW50cnlDb2RlSVNPMyI6IkFORCIsImZyZWVmb3JtQWRkcmVzcyI6IlVyYmFuaXR6YWNpw7MgU3VwZXIgUGFsLCBMYSBNYXNzYW5hLCBBRDQwMCIsImxvY2FsTmFtZSI6IkxhIE1hc3NhbmEifSwicG9zaXRpb24iOnsibGF0Ijo0Mi41NDM1NTYsImxvbiI6MS40NzQ5ODZ9LCJ2aWV3cG9ydCI6eyJ0b3BMZWZ0UG9pbnQiOnsibGF0Ijo0Mi41NDQ0NiwibG9uIjoxLjQ3Mzc3fSwiYnRtUmlnaHRQb2ludCI6eyJsYXQiOjQyLjU0MjY2LCJsb24iOjEuNDc2MjF9fSwiZW50cnlQb2ludHMiOlt7InR5cGUiOiJtYWluIiwicG9zaXRpb24iOnsibGF0Ijo0Mi41NDM0NywibG9uIjoxLjQ3NTAxfX1dfSx7InR5cGUiOiJQT0kiLCJpZCI6ImZuSklkemZMeElHQXp5VmZsS3lLZkEiLCJzY29yZSI6Mi4xNDU0Mzk4NjMyLCJkaXN0IjoxMTQxMTEyOS41NTU0NjQsImluZm8iOiJzZWFyY2g6dGE6MDIwMDA5MDAwMDIyMjUxLUFEIiwicG9pIjp7Im5hbWUiOiJBTkRCQU5LIiwiYnJhbmRzIjpbeyJuYW1lIjoiQU5EQkFOSyJ9XSwiY2F0ZWdvcnlTZXQiOlt7ImlkIjo3Mzk3fV0sImNhdGVnb3JpZXMiOlsiY2FzaCBkaXNwZW5zZXIiXSwiY2xhc3NpZmljYXRpb25zIjpbeyJjb2RlIjoiQ0FTSF9ESVNQRU5TRVIiLCJuYW1lcyI6W3sibmFtZUxvY2FsZSI6ImVuLVVTIiwibmFtZSI6ImNhc2ggZGlzcGVuc2VyIn1dfV19LCJhZGRyZXNzIjp7InN0cmVldE51bWJlciI6IjYiLCJzdHJlZXROYW1lIjoiQXZpbmd1ZGEgZGUgSm9hbiBNYXJ0w60iLCJtdW5pY2lwYWxpdHkiOiJFbmNhbXAiLCJwb3N0YWxDb2RlIjoiQUQyMDAiLCJjb3VudHJ5Q29kZSI6IkFEIiwiY291bnRyeSI6IkFuZG9ycmEiLCJjb3VudHJ5Q29kZUlTTzMiOiJBTkQiLCJmcmVlZm9ybUFkZHJlc3MiOiJBdmluZ3VkYSBkZSBKb2FuIE1hcnTDrSA2LCBFbmNhbXAsIEFEMjAwIiwibG9jYWxOYW1lIjoiRW5jYW1wIn0sInBvc2l0aW9uIjp7ImxhdCI6NDIuNTM1Njc4LCJsb24iOjEuNTgxNjUzfSwidmlld3BvcnQiOnsidG9wTGVmdFBvaW50Ijp7ImxhdCI6NDIuNTM2NTgsImxvbiI6MS41ODA0M30sImJ0bVJpZ2h0UG9pbnQiOnsibGF0Ijo0Mi41MzQ3OCwibG9uIjoxLjU4Mjg3fX0sImVudHJ5UG9pbnRzIjpbeyJ0eXBlIjoibWFpbiIsInBvc2l0aW9uIjp7ImxhdCI6NDIuNTM1NjMsImxvbiI6MS41ODE3NX19XX0seyJ0eXBlIjoiUE9JIiwiaWQiOiJ1NUFMd0h5dnpabEpyU3VRWjJ6N1dBIiwic2NvcmUiOjIuMTQ1NDM5ODYzMiwiZGlzdCI6MTE0MTI3ODIuNDk3MDM3LCJpbmZvIjoic2VhcmNoOnRhOjAyMDAwOTAwMDA0OTk2Ni1BRCIsInBvaSI6eyJuYW1lIjoiQXYuIFNhbnQgSm9hbiIsImJyYW5kcyI6W3sibmFtZSI6IkJhbmMgU2FiYWRlbGwgZCdBbmRvcnJhIn1dLCJjYXRlZ29yeVNldCI6W3siaWQiOjczOTd9XSwiY2F0ZWdvcmllcyI6WyJjYXNoIGRpc3BlbnNlciJdLCJjbGFzc2lmaWNhdGlvbnMiOlt7ImNvZGUiOiJDQVNIX0RJU1BFTlNFUiIsIm5hbWVzIjpbeyJuYW1lTG9jYWxlIjoiZW4tVVMiLCJuYW1lIjoiY2FzaCBkaXNwZW5zZXIifV19XX0sImFkZHJlc3MiOnsic3RyZWV0TnVtYmVyIjoiMiIsInN0cmVldE5hbWUiOiJDYXJyZXRlcmEgR2VuZXJhbCAyLVRyYW0gU2FudCBKb2FuIGRlIENhc2VsbGVzIiwibXVuaWNpcGFsaXR5IjoiQ2FuaWxsbyIsInBvc3RhbENvZGUiOiJBRDEwMCIsImNvdW50cnlDb2RlIjoiQUQiLCJjb3VudHJ5IjoiQW5kb3JyYSIsImNvdW50cnlDb2RlSVNPMyI6IkFORCIsImZyZWVmb3JtQWRkcmVzcyI6IkNhcnJldGVyYSBHZW5lcmFsIDItVHJhbSBTYW50IEpvYW4gZGUgQ2FzZWxsZXMgMiwgQ2FuaWxsbywgQUQxMDAiLCJsb2NhbE5hbWUiOiJDYW5pbGxvIn0sInBvc2l0aW9uIjp7ImxhdCI6NDIuNTY2MDYsImxvbiI6MS41OTUxNDF9LCJ2aWV3cG9ydCI6eyJ0b3BMZWZ0UG9pbnQiOnsibGF0Ijo0Mi41Njc1NiwibG9uIjoxLjU5MzF9LCJidG1SaWdodFBvaW50Ijp7ImxhdCI6NDIuNTY0NTYsImxvbiI6MS41OTcxOH19LCJlbnRyeVBvaW50cyI6W3sidHlwZSI6Im1haW4iLCJwb3NpdGlvbiI6eyJsYXQiOjQyLjU2NTM1LCJsb24iOjEuNTkzMzR9fV19LHsidHlwZSI6IlBPSSIsImlkIjoiNTZGMnR0R1Znd25VOHY5TGZHeFRjQSIsInNjb3JlIjoyLjE0NTQzOTg2MzIsImRpc3QiOjExNDEwNzEzLjg3MzAzOCwiaW5mbyI6InNlYXJjaDp0YTowMjAwMDkwMDAwMjE4NjUtQUQiLCJwb2kiOnsibmFtZSI6Ik1PUkFCQU5DIiwiYnJhbmRzIjpbeyJuYW1lIjoiTW9yYWJhbmMifV0sImNhdGVnb3J5U2V0IjpbeyJpZCI6NzM5N31dLCJjYXRlZ29yaWVzIjpbImNhc2ggZGlzcGVuc2VyIl0sImNsYXNzaWZpY2F0aW9ucyI6W3siY29kZSI6IkNBU0hfRElTUEVOU0VSIiwibmFtZXMiOlt7Im5hbWVMb2NhbGUiOiJlbi1VUyIsIm5hbWUiOiJjYXNoIGRpc3BlbnNlciJ9XX1dfSwiYWRkcmVzcyI6eyJzdHJlZXROdW1iZXIiOiIyIiwic3RyZWV0TmFtZSI6IkNhcnJldGVyYSBkZSBsYSBSYWJhc3NhIiwibXVuaWNpcGFsaXR5IjoiU2FudCBKdWxpw6AgZGUgTMOycmlhIiwicG9zdGFsQ29kZSI6IkFENjAwIiwiY291bnRyeUNvZGUiOiJBRCIsImNvdW50cnkiOiJBbmRvcnJhIiwiY291bnRyeUNvZGVJU08zIjoiQU5EIiwiZnJlZWZvcm1BZGRyZXNzIjoiQ2FycmV0ZXJhIGRlIGxhIFJhYmFzc2EgMiwgU2FudCBKdWxpw6AgZGUgTMOycmlhLCBBRDYwMCIsImxvY2FsTmFtZSI6IlNhbnQgSnVsacOgIGRlIEzDsnJpYSJ9LCJwb3NpdGlvbiI6eyJsYXQiOjQyLjQ2NjQ4OCwibG9uIjoxLjQ5MjQxMn0sInZpZXdwb3J0Ijp7InRvcExlZnRQb2ludCI6eyJsYXQiOjQyLjQ2NzM5LCJsb24iOjEuNDkxMTl9LCJidG1SaWdodFBvaW50Ijp7ImxhdCI6NDIuNDY1NTksImxvbiI6MS40OTM2M319LCJlbnRyeVBvaW50cyI6W3sidHlwZSI6Im1haW4iLCJwb3NpdGlvbiI6eyJsYXQiOjQyLjQ2NjUxLCJsb24iOjEuNDkyNTF9fV19LHsidHlwZSI6IlBPSSIsImlkIjoiOTBMeWoyZVRXWVBaTTJCZDlxYXFVZyIsInNjb3JlIjoyLjE0NTQzOTg2MzIsImRpc3QiOjExNDE1NDA1LjA5MDgsImluZm8iOiJzZWFyY2g6dGE6MDIwMDA5MDAwMDkzMzQwLUFEIiwicG9pIjp7Im5hbWUiOiJCYW5jU2FiYWRlbGwgZCdBbmRvcnJhIiwiYnJhbmRzIjpbeyJuYW1lIjoiQmFuYyBTYWJhZGVsbCBkJ0FuZG9ycmEifV0sImNhdGVnb3J5U2V0IjpbeyJpZCI6NzM5N31dLCJjYXRlZ29yaWVzIjpbImNhc2ggZGlzcGVuc2VyIl0sImNsYXNzaWZpY2F0aW9ucyI6W3siY29kZSI6IkNBU0hfRElTUEVOU0VSIiwibmFtZXMiOlt7Im5hbWVMb2NhbGUiOiJlbi1VUyIsIm5hbWUiOiJjYXNoIGRpc3BlbnNlciJ9XX1dfSwiYWRkcmVzcyI6eyJzdHJlZXROYW1lIjoiQXZpbmd1ZGEgZGUgU2FudCBBbnRvbmkiLCJtdW5pY2lwYWxpdHkiOiJMYSBNYXNzYW5hIiwicG9zdGFsQ29kZSI6IkFENDAwIiwiY291bnRyeUNvZGUiOiJBRCIsImNvdW50cnkiOiJBbmRvcnJhIiwiY291bnRyeUNvZGVJU08zIjoiQU5EIiwiZnJlZWZvcm1BZGRyZXNzIjoiQXZpbmd1ZGEgZGUgU2FudCBBbnRvbmksIExhIE1hc3NhbmEsIEFENDAwIiwibG9jYWxOYW1lIjoiTGEgTWFzc2FuYSJ9LCJwb3NpdGlvbiI6eyJsYXQiOjQyLjU0MzA5NCwibG9uIjoxLjUxNzE0Nn0sInZpZXdwb3J0Ijp7InRvcExlZnRQb2ludCI6eyJsYXQiOjQyLjU0Mzk5LCJsb24iOjEuNTE1OTN9LCJidG1SaWdodFBvaW50Ijp7ImxhdCI6NDIuNTQyMTksImxvbiI6MS41MTgzN319LCJlbnRyeVBvaW50cyI6W3sidHlwZSI6Im1haW4iLCJwb3NpdGlvbiI6eyJsYXQiOjQyLjU0MzAyLCJsb24iOjEuNTE3MTJ9fV19LHsidHlwZSI6IlBPSSIsImlkIjoiWGtMN1BRbEk4WGRQZDNLejhjaTdadyIsInNjb3JlIjoyLjE0NTQzOTg2MzIsImRpc3QiOjExNDEwNTcyLjEzNDgxLCJpbmZvIjoic2VhcmNoOnRhOjAyMDAwOTAwMDAyMDA1NC1BRCIsInBvaSI6eyJuYW1lIjoiQ3LDqGRpdCBBbmRvcnLDoCIsImJyYW5kcyI6W3sibmFtZSI6IkNyw6hkaXQgQW5kb3Jyw6AifV0sImNhdGVnb3J5U2V0IjpbeyJpZCI6NzM5N31dLCJjYXRlZ29yaWVzIjpbImNhc2ggZGlzcGVuc2VyIl0sImNsYXNzaWZpY2F0aW9ucyI6W3siY29kZSI6IkNBU0hfRElTUEVOU0VSIiwibmFtZXMiOlt7Im5hbWVMb2NhbGUiOiJlbi1VUyIsIm5hbWUiOiJjYXNoIGRpc3BlbnNlciJ9XX1dfSwiYWRkcmVzcyI6eyJzdHJlZXROYW1lIjoiQ2FycmV0ZXJhIEdlbmVyYWwiLCJtdW5pY2lwYWxpdHkiOiJDYW5pbGxvIiwicG9zdGFsQ29kZSI6IkFEMTAwIiwiY291bnRyeUNvZGUiOiJBRCIsImNvdW50cnkiOiJBbmRvcnJhIiwiY291bnRyeUNvZGVJU08zIjoiQU5EIiwiZnJlZWZvcm1BZGRyZXNzIjoiQ2FycmV0ZXJhIEdlbmVyYWwsIENhbmlsbG8sIEFEMTAwIiwibG9jYWxOYW1lIjoiQ2FuaWxsbyJ9LCJwb3NpdGlvbiI6eyJsYXQiOjQyLjU5MjA4OSwibG9uIjoxLjY3MDN9LCJ2aWV3cG9ydCI6eyJ0b3BMZWZ0UG9pbnQiOnsibGF0Ijo0Mi41OTI5OSwibG9uIjoxLjY2OTA4fSwiYnRtUmlnaHRQb2ludCI6eyJsYXQiOjQyLjU5MTE5LCJsb24iOjEuNjcxNTJ9fSwiZW50cnlQb2ludHMiOlt7InR5cGUiOiJtYWluIiwicG9zaXRpb24iOnsibGF0Ijo0Mi41OTIxOCwibG9uIjoxLjY3MDI2fX1dfSx7InR5cGUiOiJQT0kiLCJpZCI6ImtIN05sQlVkY3JJNUNjWU5Gb0dtM2ciLCJzY29yZSI6Mi4xNDU0Mzk4NjMyLCJkaXN0IjoxMTQxNTg5Mi41ODUwNiwiaW5mbyI6InNlYXJjaDp0YTowMjAwMDkwMDAwMjAxNzgtQUQiLCJwb2kiOnsibmFtZSI6IkFOREJBTksiLCJicmFuZHMiOlt7Im5hbWUiOiJBTkRCQU5LIn1dLCJjYXRlZ29yeVNldCI6W3siaWQiOjczOTd9XSwiY2F0ZWdvcmllcyI6WyJjYXNoIGRpc3BlbnNlciJdLCJjbGFzc2lmaWNhdGlvbnMiOlt7ImNvZGUiOiJDQVNIX0RJU1BFTlNFUiIsIm5hbWVzIjpbeyJuYW1lTG9jYWxlIjoiZW4tVVMiLCJuYW1lIjoiY2FzaCBkaXNwZW5zZXIifV19XX0sImFkZHJlc3MiOnsic3RyZWV0TmFtZSI6IkF2aW5ndWRhIGRlIFNhbnQgQW50b25pIiwibXVuaWNpcGFsaXR5IjoiTGEgTWFzc2FuYSIsInBvc3RhbENvZGUiOiJBRDQwMCIsImNvdW50cnlDb2RlIjoiQUQiLCJjb3VudHJ5IjoiQW5kb3JyYSIsImNvdW50cnlDb2RlSVNPMyI6IkFORCIsImZyZWVmb3JtQWRkcmVzcyI6IkF2aW5ndWRhIGRlIFNhbnQgQW50b25pLCBMYSBNYXNzYW5hLCBBRDQwMCIsImxvY2FsTmFtZSI6IkxhIE1hc3NhbmEifSwicG9zaXRpb24iOnsibGF0Ijo0Mi41NDY3MzUsImxvbiI6MS41MTM2OTJ9LCJ2aWV3cG9ydCI6eyJ0b3BMZWZ0UG9pbnQiOnsibGF0Ijo0Mi41NDc2MywibG9uIjoxLjUxMjQ3fSwiYnRtUmlnaHRQb2ludCI6eyJsYXQiOjQyLjU0NTg0LCJsb24iOjEuNTE0OTF9fSwiZW50cnlQb2ludHMiOlt7InR5cGUiOiJtYWluIiwicG9zaXRpb24iOnsibGF0Ijo0Mi41NDY5MywibG9uIjoxLjUxMzcyfX1dfSx7InR5cGUiOiJQT0kiLCJpZCI6IkFfSTB3X3RzaEwxOWFBZXlsUlA3bEEiLCJzY29yZSI6Mi4xNDU0Mzk4NjMyLCJkaXN0IjoxMTQxMTk0My4yOTE4MTYsImluZm8iOiJzZWFyY2g6dGE6MDIwMDA5MDAwMDAwOTUxLUFEIiwicG9pIjp7Im5hbWUiOiJDcsOoZGl0IEFuZG9ycsOgIiwiYnJhbmRzIjpbeyJuYW1lIjoiQ3LDqGRpdCBBbmRvcnLDoCJ9XSwiY2F0ZWdvcnlTZXQiOlt7ImlkIjo3Mzk3fV0sImNhdGVnb3JpZXMiOlsiY2FzaCBkaXNwZW5zZXIiXSwiY2xhc3NpZmljYXRpb25zIjpbeyJjb2RlIjoiQ0FTSF9ESVNQRU5TRVIiLCJuYW1lcyI6W3sibmFtZUxvY2FsZSI6ImVuLVVTIiwibmFtZSI6ImNhc2ggZGlzcGVuc2VyIn1dfV19LCJhZGRyZXNzIjp7InN0cmVldE51bWJlciI6IjgwIiwic3RyZWV0TmFtZSI6IkF2aW5ndWRhIE1lcml0eGVsbCIsIm11bmljaXBhbGl0eSI6IkFuZG9ycmEgbGEgVmVsbGEiLCJwb3N0YWxDb2RlIjoiQUQ1MDAiLCJjb3VudHJ5Q29kZSI6IkFEIiwiY291bnRyeSI6IkFuZG9ycmEiLCJjb3VudHJ5Q29kZUlTTzMiOiJBTkQiLCJmcmVlZm9ybUFkZHJlc3MiOiJBdmluZ3VkYSBNZXJpdHhlbGwgODAsIEFuZG9ycmEgbGEgVmVsbGEsIEFENTAwIiwibG9jYWxOYW1lIjoiQW5kb3JyYSBsYSBWZWxsYSJ9LCJwb3NpdGlvbiI6eyJsYXQiOjQyLjUwODU3OCwibG9uIjoxLjUyOTU4M30sInZpZXdwb3J0Ijp7InRvcExlZnRQb2ludCI6eyJsYXQiOjQyLjUwOTQ4LCJsb24iOjEuNTI4MzZ9LCJidG1SaWdodFBvaW50Ijp7ImxhdCI6NDIuNTA3NjgsImxvbiI6MS41MzA4fX0sImVudHJ5UG9pbnRzIjpbeyJ0eXBlIjoibWFpbiIsInBvc2l0aW9uIjp7ImxhdCI6NDIuNTA4NzMsImxvbiI6MS41Mjk0Mn19XX1dfQ==
+  recorded_at: Sun, 31 Mar 2024 22:07:50 GMT
 recorded_with: VCR 6.2.0
