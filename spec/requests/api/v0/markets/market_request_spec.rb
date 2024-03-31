@@ -240,8 +240,7 @@ RSpec.describe "Api::V0::Markets", :vcr, type: :request do
 			pm_id = 330318
 			market = create(:market, id: pm_id)
 
-			# get "/api/v0/markets/#{market.id}/nearest_atms", headers: { "Content-Type": "application/json" }
-			get "/api/v0/markets/#{pm_id}/nearest_atms", headers: { "Content-Type": "application/json" }
+			get "/api/v0/markets/#{market.id}/nearest_atms", headers: { "Content-Type": "application/json" }
 
 			res_hash = JSON.parse(response.body, symbolize_names: true)
 
