@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tomtom.com/search/2/categorySearch/atm.json?key=<API_Key>&lat=27.061287816949573&lon=-145.44731323416102
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 31 Mar 2024 07:02:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      Tracking-Id:
+      - 269d752c-0a01-4154-af69-56479c0c3813
+      Access-Control-Expose-Headers:
+      - Tracking-ID
+      Server:
+      - tomtom
+      X-Tomtom-Processed-By:
+      - westus2
+      X-Tomtom-Message-Id:
+      - b88810eb-4ca3-4d9c-83a5-2ab14b78c0b6
+      X-Tomtom-Upstream-Service-Time:
+      - '221'
+      X-Tomtom-Attempt-Count:
+      - '1'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"summary":{"query":"atm","queryType":"NON_NEAR","queryTime":206,"numResults":10,"offset":0,"totalResults":100,"fuzzyLevel":1,"geoBias":{"lat":27.061287816949573,"lon":-145.44731323416102}},"results":[{"type":"POI","id":"2OhS6vxWM77e14IFdDpdGg","score":2.1454498768,"dist":1269713.927092,"info":"search:ta:840159000494672-US","poi":{"name":"First
+        Hawaiian Bank","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"36-2266","streetName":"Hawai''i
+        Belt Road","municipality":"Laupahoehoe","countrySecondarySubdivision":"Hawai''i","countrySubdivision":"HI","countrySubdivisionName":"Hawai''i","countrySubdivisionCode":"HI","postalCode":"96764","extendedPostalCode":"96764-9997","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"36-2266 Hawai''i Belt Road,
+        Laupahoehoe, HI 96764","localName":"Laupahoehoe"},"position":{"lat":19.984546,"lon":-155.232684},"viewport":{"topLeftPoint":{"lat":19.98628,"lon":-155.23453},"btmRightPoint":{"lat":19.98281,"lon":-155.23084}},"entryPoints":[{"type":"main","position":{"lat":19.98423,"lon":-155.23285}},{"type":"main","position":{"lat":19.98481,"lon":-155.23451}}]},{"type":"POI","id":"M0_0HQXC9JePhaJZ9JgeUQ","score":2.1454496384,"dist":1274081.293613,"info":"search:ta:840159000655474-US","poi":{"name":"Bank
+        of Hawaii ATM","phone":"+1 888-643-3888","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetName":"Kekuanao''a Street","municipality":"Hilo","countrySecondarySubdivision":"Hawai''i","countrySubdivision":"HI","countrySubdivisionName":"Hawai''i","countrySubdivisionCode":"HI","postalCode":"96720","extendedPostalCode":"96720-7515","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"Kekuanao''a Street, Hilo,
+        HI 96720","localName":"Hilo"},"position":{"lat":19.714741,"lon":-155.039414},"viewport":{"topLeftPoint":{"lat":19.71564,"lon":-155.04037},"btmRightPoint":{"lat":19.71384,"lon":-155.03846}},"entryPoints":[{"type":"main","position":{"lat":19.71446,"lon":-155.03941}}]},{"type":"POI","id":"kVH4Sbgp3EeoBsuveYhTzw","score":2.1454496384,"dist":1273232.551257,"info":"search:ta:840159000632614-US","poi":{"name":"ATM","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"27-289","streetName":"Mill Road","municipality":"Papa''ikou","countrySecondarySubdivision":"Hawai''i","countrySubdivision":"HI","countrySubdivisionName":"Hawai''i","countrySubdivisionCode":"HI","postalCode":"96781","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"27-289 Mill Road, Papa''ikou,
+        HI 96781","localName":"Papa''ikou"},"position":{"lat":19.782455,"lon":-155.09218},"viewport":{"topLeftPoint":{"lat":19.78335,"lon":-155.09314},"btmRightPoint":{"lat":19.78156,"lon":-155.09122}},"entryPoints":[{"type":"main","position":{"lat":19.78277,"lon":-155.09204}}]},{"type":"POI","id":"wGlR2TyPzOacggGQLJfHKg","score":2.1454496384,"dist":1274977.635359,"info":"search:ta:840159000632414-US","poi":{"name":"ATM","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"121","streetName":"Banyan Drive","municipality":"Hilo","countrySecondarySubdivision":"Hawai''i","countrySubdivision":"HI","countrySubdivisionName":"Hawai''i","countrySubdivisionCode":"HI","postalCode":"96720","extendedPostalCode":"96720-4266","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"121 Banyan Drive, Hilo,
+        HI 96720","localName":"Hilo"},"position":{"lat":19.728425,"lon":-155.063778},"viewport":{"topLeftPoint":{"lat":19.72932,"lon":-155.06473},"btmRightPoint":{"lat":19.72753,"lon":-155.06282}},"entryPoints":[{"type":"main","position":{"lat":19.72817,"lon":-155.06411}}]},{"type":"POI","id":"rqE_N81shapnR5tAPBZGdQ","score":2.1454496384,"dist":1272613.52372,"info":"search:ta:840157000000642-US","poi":{"name":"First
+        Hawaiian Bank","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"15-2875","streetName":"Government
+        Beach Road","municipality":"Pahoa","neighbourhood":"Kapoho","countrySecondarySubdivision":"Hawai''i","countrySubdivision":"HI","countrySubdivisionName":"Hawai''i","countrySubdivisionCode":"HI","postalCode":"96778","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"15-2875 Government Beach
+        Road, Pahoa, HI 96778","localName":"Pahoa"},"position":{"lat":19.539684,"lon":-154.851653},"viewport":{"topLeftPoint":{"lat":19.54058,"lon":-154.85261},"btmRightPoint":{"lat":19.53878,"lon":-154.8507}},"entryPoints":[{"type":"main","position":{"lat":19.53968,"lon":-154.85165}}]},{"type":"POI","id":"GcoYXFHy6d2Br2ODnFUAqg","score":2.1454496384,"dist":1273248.067236,"info":"search:ta:840159000629780-US","poi":{"name":"Onomea
+        Fcu","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"27-251","streetName":"Old Mamalahoa
+        Highway","municipality":"Papa''ikou","countrySecondarySubdivision":"Hawai''i","countrySubdivision":"HI","countrySubdivisionName":"Hawai''i","countrySubdivisionCode":"HI","postalCode":"96781","extendedPostalCode":"96781-7736","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"27-251 Old Mamalahoa Highway,
+        Papa''ikou, HI 96781","localName":"Papa''ikou"},"position":{"lat":19.783827,"lon":-155.093657},"viewport":{"topLeftPoint":{"lat":19.78473,"lon":-155.09461},"btmRightPoint":{"lat":19.78293,"lon":-155.0927}},"entryPoints":[{"type":"main","position":{"lat":19.78384,"lon":-155.09348}}]},{"type":"POI","id":"Wpgfe7Xw2djN1p3awrAvCw","score":2.1454496384,"dist":1275278.639363,"info":"search:ta:840159000491647-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"71","streetName":"Banyan Drive","municipality":"Hilo","countrySecondarySubdivision":"Hawai''i","countrySubdivision":"HI","countrySubdivisionName":"Hawai''i","countrySubdivisionCode":"HI","postalCode":"96720","extendedPostalCode":"96720-4693","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"71 Banyan Drive, Hilo,
+        HI 96720","localName":"Hilo"},"position":{"lat":19.727879,"lon":-155.067107},"viewport":{"topLeftPoint":{"lat":19.72878,"lon":-155.06806},"btmRightPoint":{"lat":19.72698,"lon":-155.06615}},"entryPoints":[{"type":"main","position":{"lat":19.72742,"lon":-155.06678}}]},{"type":"POI","id":"XW7-23XOSwQeeYRHTco76A","score":2.1454496384,"dist":1274016.048028,"info":"search:ta:840159000475882-US","poi":{"name":"Bank
+        of Hawaii","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"2450","streetName":"Kekuanao''a
+        Street","municipality":"Hilo","countrySecondarySubdivision":"Hawai''i","countrySubdivision":"HI","countrySubdivisionName":"Hawai''i","countrySubdivisionCode":"HI","postalCode":"96720","extendedPostalCode":"96720-7515","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"2450 Kekuanao''a Street,
+        Hilo, HI 96720","localName":"Hilo"},"position":{"lat":19.714552,"lon":-155.0384},"viewport":{"topLeftPoint":{"lat":19.71545,"lon":-155.03936},"btmRightPoint":{"lat":19.71365,"lon":-155.03744}},"entryPoints":[{"type":"main","position":{"lat":19.71446,"lon":-155.0384}}]},{"type":"POI","id":"FxkNnWGlQ6JaBMCF_kXqCw","score":2.1454496384,"dist":1274301.742538,"info":"search:ta:840159000506422-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"11","streetName":"Silva Street","municipality":"Hilo","countrySecondarySubdivision":"Hawai''i","countrySubdivision":"HI","countrySubdivisionName":"Hawai''i","countrySubdivisionCode":"HI","postalCode":"96720","extendedPostalCode":"96720-4727","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"11 Silva Street, Hilo,
+        HI 96720","localName":"Hilo"},"position":{"lat":19.727269,"lon":-155.054058},"viewport":{"topLeftPoint":{"lat":19.72817,"lon":-155.05501},"btmRightPoint":{"lat":19.72637,"lon":-155.0531}},"entryPoints":[{"type":"main","position":{"lat":19.72727,"lon":-155.05431}}]},{"type":"POI","id":"A8ajlcueaCjZ-sNfh-xumA","score":2.1454496384,"dist":1275498.218578,"info":"search:ta:840159000495061-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"1730","streetName":"Ka-mehameha
+        Avenue","municipality":"Hilo","countrySecondarySubdivision":"Hawai''i","countrySubdivision":"HI","countrySubdivisionName":"Hawai''i","countrySubdivisionCode":"HI","postalCode":"96720","extendedPostalCode":"96720-4639","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"1730 Ka-mehameha Avenue,
+        Hilo, HI 96720","localName":"Hilo"},"position":{"lat":19.722231,"lon":-155.06459},"viewport":{"topLeftPoint":{"lat":19.72313,"lon":-155.06555},"btmRightPoint":{"lat":19.72133,"lon":-155.06363}},"entryPoints":[{"type":"main","position":{"lat":19.72258,"lon":-155.0646}}]}]}'
+  recorded_at: Sun, 31 Mar 2024 07:02:34 GMT
+recorded_with: VCR 6.2.0
