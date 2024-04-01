@@ -10,7 +10,7 @@ class Market < ApplicationRecord
 	end
 
 	def self.fuzzy_find(column, val)
-		where("#{column} ILIKE '%#{val}%'")
+		where("#{column} ILIKE ?", val)
 	end
 
 	def self.filter_params(*args)
